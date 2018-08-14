@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using MessagingMVC.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,8 @@ namespace MessagingMVC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+	        services.AddHttpClient<IMessageService, MessageService>();
+	        services.AddHttpClient<INotifyRecipientService, NotifyRecipientService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -50,7 +53,7 @@ namespace MessagingMVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Messages}/{action=Create}/{id?}");
             });
         }
     }

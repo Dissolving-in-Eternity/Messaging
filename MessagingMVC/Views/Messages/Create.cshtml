@@ -1,0 +1,56 @@
+﻿@model MessageViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Send a message</h2>
+
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="MessageServiceUrl" class="control-label"></label>
+				<input asp-for="MessageServiceUrl" class="form-control" />
+				<span asp-validation-for="MessageServiceUrl" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="NotificationServiceUrl" class="control-label"></label>
+				<input asp-for="NotificationServiceUrl" class="form-control" />
+				<span asp-validation-for="NotificationServiceUrl" class="text-danger"></span>
+			</div>
+			<hr/>
+			<div class="form-group">
+				<label asp-for="Subject" class="control-label"></label>
+				<input asp-for="Subject" class="form-control" />
+				<span asp-validation-for="Subject" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Body" class="control-label"></label>
+				<textarea asp-for="Body" class="form-control"></textarea>
+				<span asp-validation-for="Body" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="RecipientIds" class="control-label"></label>
+				<textarea asp-for="RecipientIds" class="form-control"></textarea>
+				<span asp-validation-for="RecipientIds" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</form>
+		@if (Model != null && !string.IsNullOrEmpty(Model.MessageId))
+		{
+			<div class="alert alert-success">
+				<strong>Message Id:</strong> @Model.MessageId
+			</div>
+		}
+	</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
