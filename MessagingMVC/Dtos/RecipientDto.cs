@@ -1,4 +1,4 @@
-﻿namespace MessagingMVC.Services
+﻿namespace MessagingMVC.Dtos
 {
 	public class RecipientDto
 	{

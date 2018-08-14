@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MessagingMVC.Services
+namespace MessagingMVC.Dtos
 {
 	public class MessageDto
 	{

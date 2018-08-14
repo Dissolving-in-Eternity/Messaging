@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using MessagingMVC.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using MessagingMVC.Models;
 using MessagingMVC.Services;

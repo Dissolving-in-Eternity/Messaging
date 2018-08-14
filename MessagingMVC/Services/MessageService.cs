@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using MessagingMVC.Dtos;
 using Newtonsoft.Json;
 
 namespace MessagingMVC.Services

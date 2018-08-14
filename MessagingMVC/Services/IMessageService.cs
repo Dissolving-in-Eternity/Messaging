@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using MessagingMVC.Dtos;
 
 namespace MessagingMVC.Services
 {
